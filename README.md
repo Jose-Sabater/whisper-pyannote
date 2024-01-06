@@ -24,7 +24,7 @@ pipeline = Pipeline.from_pretrained(
 
 model = whisper.load_model("base")
 diarization_result = pipeline("path/to/audio.wav")
-transcription_result = model.transcribe("path/to/audio.wav")
+transcription_result = model.transcribe("path/to/audio.wav", word_timestamps=True)
 
 final_result = words_per_segment(transcription_result, diarization_result)
 
