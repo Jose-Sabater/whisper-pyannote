@@ -19,10 +19,10 @@ from pyannote.audio import Pipeline
 from utils import words_per_segment
 
 pipeline = Pipeline.from_pretrained(
-    "pyannote/speaker-diarization", use_auth_token="your/token"
+    "pyannote/speaker-diarization-3.1", use_auth_token="your/token"
 )
 
-model = whisper.load_model("base")
+model = whisper.load_model("small")
 diarization_result = pipeline("path/to/audio.wav")
 transcription_result = model.transcribe("path/to/audio.wav", word_timestamps=True)
 
